@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+
+/* Definições gerais para o HTML */
+html {
+    scroll-behavior: smooth;
+    -ms-text-size-adjust: 100%; /* Ajuste de tamanho do texto para o Internet Explorer */
+    -webkit-text-size-adjust: 100%; /* Ajuste de tamanho do texto para o WebKit */
+}
+
+/* Definição das variáveis de cores */
+:root {
+    --black: #020202ff;
+    --night: #08150dff;
+    --dark-green: #0d2818ff;
+    --pakistan-green: #09381aff;
+    --dartmouth-green: #07622eff;
+    --sea-green: #058c42ff;
+    --pigment-green: #0eb454ff;
+    --malachite: #16db65ff;
+    --malachite-2: #2bde73ff;
+    --honeydew: #ebfff3ff;
+}
+
+/* Estilo para linha horizontal */
+hr.solid {
+    border-top: 2px solid var(--malachite); /* Cor e espessura da linha */
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 0px; /* Não há linha na parte inferior */
+}
+
+/* Reset CSS básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zen Antique Soft", serif;
+    font-size:25px;
+    color: var(--honeydew);
+}
+
+/* Estilos para o main */
+main {
+    background: var(--pakistan-green);
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    height: 120vh;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+/* Estilos para o contentor principal */
+.container {
+    background-color: var(--black);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: auto;
+    width: 80%;
+    height: 97%;
+    margin: 40px;
+    display: flex;
+}
+
+/* Estilos para o conteúdo */
+.content {
+    margin: 40px;
+}
+
+.zen-antique-soft-regular {
+  font-family: "Zen Antique Soft", serif;
+  font-weight: 400;
+  font-style: normal;
+}
