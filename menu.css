@@ -31,11 +31,6 @@ html {
     -webkit-text-size-adjust: 100%;         /* Ajuste de tamanho do texto para o WebKit */
 }
 
-/* Estilos para o corpo (body) */
-body {
-    background-color: var(--night);  /* Cor de fundo do corpo */
-}
-
 /* Estilos para a classe 'namesb' */
 .namesb {
     float: none;                            /* Remove a flutuação do elemento */
@@ -43,9 +38,12 @@ body {
     padding-top: 6px;                       /* Espaçamento na parte superior */
     padding-bottom: 15px;                   /* Espaçamento na parte inferior */
     padding-left: 14px;                     /* Espaçamento na parte esquerda */
-    font-size: 25px;                        /* Tamanho da fonte */
+}
+
+.namesb .txt {
+    font-size: 35px;                        /* Tamanho da fonte */
     font-weight: bold;                      /* Peso da fonte */
-    text-align: right;                      /* Alinhamento do texto à direita */
+    text-align: center;                      /* Alinhamento do texto à direita */
 }
 
 .namesb img {
@@ -66,23 +64,26 @@ hr.solid {
     border-top: 2px solid var(--dartmouth-green);  /* Borda superior sólida */
     margin-left: 15px;                           /* Margem à esquerda */
     margin-right: 15px;                          /* Margem à direita */
+    margin-bottom: 10px;                           /* Margem inferior */
     border-bottom: 0px;                          /* Nenhuma borda na parte inferior */
 }
 
 /* Estilos para a barra lateral */
 .sidebar {
     background-color: var(--night);      /* Cor de fundo da barra lateral */
-    overflow: hidden;                             /* Ocultar o conteúdo que ultrapassa as dimensões da barra lateral */
-    position: absolute;                           /* Posição absoluta */
-    width: 15%;                                   /* Largura */
-    height: 120%;                                 /* Altura */
-    flex-direction: column;                       /* Direção da disposição dos elementos */
-    top: 0;                                       /* Alinhamento ao topo */
-    right: 0;                                     /* Alinhamento à direita */
-    z-index: 1;                                   /* Posição na ordem de empilhamento */
-    border-radius: 15px 0px 0 40px;               /* Raio da borda */
-    margin-left: 10px;                            /* Margem à esquerda */
+    overflow: hidden;                    /* Ocultar o conteúdo que ultrapassa as dimensões da barra lateral */
+    /* Use fixed positioning so sidebar fills vertically but keeps top/bottom margins */
+    position: fixed;
+    width: 17%;                          /* Largura */
+    top: 20px;                           /* keep top margin */
+    bottom: 20px;                        /* keep bottom margin */
+    right: 10px;                         /* small offset from the right edge */
+    z-index: 1000;                       /* Ensure it sits above content */
+    border-radius: 20px;                 /* Raio da borda */
+    margin-left: 10px;                   /* Margem à esquerda (kept for layout) */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);   /* Sombra */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Estilos para os links na barra lateral */
@@ -97,7 +98,7 @@ hr.solid {
 }
 
 .sidebar a img {
-    width: 30px;                            /* Largura da imagem */
+    width: 45px;                            /* Largura da imagem */
     left: 0;                                /* Alinhamento à esquerda */
     margin-left: 5px;                       /* Margem à esquerda */
 }
@@ -135,7 +136,7 @@ hr.solid {
 }
 
 .dropdown .dropbtn img{
-    width: 30px;                            /* Largura da imagem*/
+    width: 45px;                            /* Largura da imagem*/
 }
 
 .dropdown:hover .dropbtn {
