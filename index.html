@@ -9,7 +9,8 @@
     <link rel="icon" href="favicon/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 
-    <link rel="stylesheet" href="styles.css">                 
+    <link rel="stylesheet" href="styles.css">   
+    <link rel="stylesheet" href="menu.css">               
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +19,71 @@
 </head>
 
 <body>
+    <header>
+        <div class="sidebar">
+            <br>
+            <div class="namesb">
+                <center>
+                    <img src="imagens/Malleus_Logo.png">
+                    <div class="txt"> Malleus Draconia</div>
+                </center> 
+            </div>
+
+            <hr class="solid">
+
+            <a href="login.php">
+                <table>
+                        <tr>
+                        <th>
+                            <img src="imagens/book.png">
+                        <td>
+                            Informações Principais
+                        </td>
+                        </tr> 
+                </table>
+            </a>
+
+            <a href="index.php" class="<?= $page == 'index.php' ? 'active':''; ?>">
+                <table>
+                        <tr>
+                        <th>
+                            <img src="imagens/worldwide.png">
+                        <td>
+                            Mundo
+                        </td>
+                        </tr> 
+                </table>
+            </a>
+                
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <table>
+                            <tr>
+                            <th>
+                                <img src="imagens/menu.png">
+                            <td>
+                                Sobre
+                            </td>
+                            </tr> 
+                    </table>
+                </button>
+                <div class="dropdown-content">
+                    <a href="referencias.php" class="<?= $page == 'referencias.php' ? 'active':''; ?>" >
+                        <table>
+                                <tr>
+                                <th>
+                                <img src="imagens/quill-pen.png">
+                                <td>
+                                    Referências
+                                </td>
+                                </tr> 
+                        </table>
+                    </a>
+                </div>
+            </div>
+        </div>    
+    </header>
+
     <main>
         <div class="container">
             <div class="content">

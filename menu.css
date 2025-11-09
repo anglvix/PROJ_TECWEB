@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+
+/* Definição das variáveis de cores usando a pseudo-classe :root */
+:root {
+    --black: #020202ff;
+    --night: #08150dff;
+    --dark-green: #0d2818ff;
+    --pakistan-green: #09381aff;
+    --dartmouth-green: #07622eff;
+    --sea-green: #058c42ff;
+    --pigment-green: #0eb454ff;
+    --malachite: #16db65ff;
+    --malachite-2: #2bde73ff;
+    --honeydew: #ebfff3ff;
+}
+
+/* Reset CSS básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zen Antique Soft", serif;
+    font-size:25px;
+    color: var(--honeydew);
+}
+
+/* Estilos para o HTML */
+html {
+    scroll-behavior: smooth;                /* Comportamento de rolagem suave */
+    -ms-text-size-adjust: 100%;             /* Ajuste de tamanho do texto para o Internet Explorer */
+    -webkit-text-size-adjust: 100%;         /* Ajuste de tamanho do texto para o WebKit */
+}
+
+/* Estilos para o corpo (body) */
+body {
+    background-color: var(--night);  /* Cor de fundo do corpo */
+}
+
+/* Estilos para a classe 'namesb' */
+.namesb {
+    float: none;                            /* Remove a flutuação do elemento */
+    color: var(--night);              /* Cor do texto */
+    padding-top: 6px;                       /* Espaçamento na parte superior */
+    padding-bottom: 15px;                   /* Espaçamento na parte inferior */
+    padding-left: 14px;                     /* Espaçamento na parte esquerda */
+    font-size: 25px;                        /* Tamanho da fonte */
+    font-weight: bold;                      /* Peso da fonte */
+    text-align: right;                      /* Alinhamento do texto à direita */
+}
+
+.namesb img {
+    width: 150px;                           /* Largura da imagem */
+}
+
+.namesb table td {
+    padding-left: 25px;                     /* Espaçamento à esquerda das células da tabela */
+}
+
+.sidebar table td {
+    padding-left: 25px;                     /* Espaçamento à esquerda das células da tabela na barra lateral */
+    font-weight: 500;                       /* Peso da fonte */
+}
+
+/* Estilos para a linha horizontal */
+hr.solid {
+    border-top: 2px solid var(--dartmouth-green);  /* Borda superior sólida */
+    margin-left: 15px;                           /* Margem à esquerda */
+    margin-right: 15px;                          /* Margem à direita */
+    border-bottom: 0px;                          /* Nenhuma borda na parte inferior */
+}
+
+/* Estilos para a barra lateral */
+.sidebar {
+    background-color: var(--night);      /* Cor de fundo da barra lateral */
+    overflow: hidden;                             /* Ocultar o conteúdo que ultrapassa as dimensões da barra lateral */
+    position: absolute;                           /* Posição absoluta */
+    width: 15%;                                   /* Largura */
+    height: 120%;                                 /* Altura */
+    flex-direction: column;                       /* Direção da disposição dos elementos */
+    top: 0;                                       /* Alinhamento ao topo */
+    right: 0;                                     /* Alinhamento à direita */
+    z-index: 1;                                   /* Posição na ordem de empilhamento */
+    border-radius: 15px 0px 0 40px;               /* Raio da borda */
+    margin-left: 10px;                            /* Margem à esquerda */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);   /* Sombra */
+}
+
+/* Estilos para os links na barra lateral */
+.sidebar a {
+    float: none;                            /* Remove a flutuação */
+    display: block;                         /* Bloco de exibição */
+    color: var(--honeydew);                    /* Cor do texto */
+    padding: 14px 16px;                     /* Espaçamento interno */
+    text-decoration: none;                  /* Remover decoração de texto */
+    font-size: 18px;                        /* Tamanho da fonte */
+    text-align: left;                       /* Alinhamento à esquerda */
+}
+
+.sidebar a img {
+    width: 30px;                            /* Largura da imagem */
+    left: 0;                                /* Alinhamento à esquerda */
+    margin-left: 5px;                       /* Margem à esquerda */
+}
+
+/* Estilos para links na barra lateral ao passar o rato */
+.sidebar a:hover:not(.active) {
+    background-color: var(--dartmouth-green);   /* Cor de fundo ao passar o rato */
+    color: var(--honeydew);                    /* Cor do texto ao passar o rato */
+}
+
+/* Estilos para o link ativo na barra lateral */
+.sidebar a.active {
+    background-color: var(--dark-green); /* Cor de fundo para o link ativo */
+    color: var(--honeydew);                    /* Cor do texto para o link ativo */
+}
+
+/* Estilos para o dropdown na barra lateral */
+.dropdown {
+    float: left;                            /* Flutuação à esquerda */
+    overflow: hidden;                       /* Oculta o conteúdo que ultrapassa as dimensões */
+    width: 100%;                            /* Largura */
+}
+
+.dropdown .dropbtn {
+    font-size: 18px;                        /* Tamanho da fonte */
+    border: none;                           /* Sem borda */
+    outline: none;                          /* Sem contorno */
+    color: var(--honeydew);                    /* Cor do texto */
+    padding: 14px 16px;                     /* Espaçamento interno */
+    background-color: inherit;              /* Herda a cor de fundo */
+    font-family: inherit;                   /* Herda a fonte */
+    margin: 0;                              /* Margem */
+    width: 100%;                            /* Largura */
+    text-align: right;                      /* Alinhamento do texto à direita */
+}
+
+.dropdown .dropbtn img{
+    width: 30px;                            /* Largura da imagem*/
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--dartmouth-green);    /* Cor de fundo ao passar o mouse sobre o botão do dropdown */
+}
+
+.dropdown-content {
+    display: none;                  /* Inicialmente esconde o conteúdo do dropdown */
+    position: absolute;             /* Posiciona o dropdown de forma absoluta em relação ao elemento pai mais próximo com position diferente de static */
+    background-color: var(--sea-green);    /* Cor de fundo do dropdown */
+    color: var(--honeydew);               /* Cor do texto no dropdown */
+    width: 100%;               /* Largura mínima do dropdown */
+    box-shadow: 0px 8px 16px 0px #00000033;         /* Sombra do dropdown */
+    z-index: 1;                     /* Define a ordem de empilhamento sobre outros elementos */
+}
+
+.dropdown-content a {
+    float: none;                    /* Remove o efeito de flutuação dos links dentro do dropdown */
+    color: inherit;                 /* Herda a cor do texto do elemento pai */
+    padding: 12px 16px;             /* Espaçamento interno dos links dentro do dropdown */
+    display: block;                 /* Faz com que os links ocupem toda a largura disponível dentro do dropdown */
+    text-align: right;               /* Alinhamento do texto à esquerda nos links dentro do dropdown */
+}
+
+.dropdown-content a:hover {
+    background-color: #b3bccf;    /* Cor de fundo ao passar o mouse sobre os links dentro do dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;                 /* Exibe o conteúdo do dropdown ao passar o mouse sobre o botão do dropdown */
+}
+
+@media only screen and (max-width: 1397px) {
+    .namesb img{
+        width: 70px;                /* Reduz a largura da imagem */
+    }
+
+    .namesb .txt {
+        visibility: hidden;                 /* Oculta o texto */
+        display: none;                      /* Não exibe */
+    }
+    
+    .sidebar a table td {
+        visibility: hidden;                 /* Oculta as células da tabela */
+        display: none;                      /* Não exibe */
+    }
+    
+    .sidebar a {
+        display: flex;                      /* Exibe como flexível */
+        align-items: center;                /* Alinha os itens ao centro */
+    }
+    
+    .sidebar {
+        width: 8%;                          /* Reduz a largura */
+    }
+    
+    .dropdown .dropbtn table td {
+        visibility: hidden;                 /* Oculta as células da tabela */
+        display: none;                      /* Não exibe */
+    }
+}
