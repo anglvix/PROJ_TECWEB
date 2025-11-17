@@ -21,20 +21,17 @@ html {
     --honeydew: #ebfff3ff;
 }
 
-/* Set global background to pakistan green */
 body {
     background: var(--pakistan-green);
 }
 
-/* Estilo para linha horizontal */
 hr.solid {
-    border-top: 2px solid var(--malachite); /* Cor e espessura da linha */
+    border-top: 2px solid var(--malachite);
     margin-left: 15px;
     margin-right: 15px;
-    border-bottom: 0px; /* Não há linha na parte inferior */
+    border-bottom: 0px; 
 }
 
-/* Reset CSS básico para todos os elementos */
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +41,6 @@ hr.solid {
     color: var(--honeydew);
 }
 
-/* Estilos para o main */
 main {
     background: var(--pakistan-green);
     overflow-x: hidden;
@@ -53,17 +49,23 @@ main {
     height: 100vh;
     padding-bottom: 20px;
     padding-top: 10px;
-    margin-right: 20%; /* Add margin for the sidebar */
+    /* Restaurar espaçamento confortável entre conteúdo e barra lateral */
+    margin-right: 18%;
 }
 
-/* Estilos para o contentor principal */
+/* Regressão responsiva: reduzir margem lateral em ecrãs pequenos para evitar overflow */
+@media only screen and (max-width: 1200px) {
+    main {
+        margin-right: 10%;
+    }
+}
+
 .container {
     background-color: var(--black);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    /* make the container bigger while preserving the 20px margins */
+    overflow-y: auto;
+    overflow-x: hidden;
     width: calc(100% - 40px);
     height: 95%;
     margin: 20px;
@@ -90,7 +92,6 @@ main {
     background: var(--sea-green);
 }
 
-/* Estilos para o conteúdo */
 .content {
     margin: 40px;
     width: 100%;
