@@ -49,14 +49,14 @@ main {
     height: 100vh;
     padding-bottom: 20px;
     padding-top: 10px;
-    /* Restaurar espaçamento confortável entre conteúdo e barra lateral */
-    margin-right: 18%;
+    /* Restaurar espaçamento confortável entre conteúdo e barra lateral à esquerda */
+    margin-left: 18%;
 }
 
 /* Regressão responsiva: reduzir margem lateral em ecrãs pequenos para evitar overflow */
 @media only screen and (max-width: 1200px) {
     main {
-        margin-right: 10%;
+        margin-left: 10%;
     }
 }
 
@@ -70,6 +70,8 @@ main {
     height: 95%;
     margin: 20px;
     display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
 
 /* Estilo da scroll bar*/
@@ -96,6 +98,8 @@ main {
     margin: 40px;
     width: 100%;
     height: 100%;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .zen-antique-soft-regular {

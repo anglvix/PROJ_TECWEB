@@ -77,7 +77,7 @@ hr.solid {
     width: 16%;                          /* Largura (ajustada para restaurar espaçamento confortável) */
     top: 20px;                           /* manter margem superior */
     bottom: 20px;                        /* manter margem inferior */
-    right: 10px;                         /* pequeno afastamento da borda direita */
+    left: 10px;                          /* pequeno afastamento da borda esquerda */
     z-index: 1000;                       /* Garantir que fica acima do conteúdo */
     border-radius: 20px;                 /* Raio da borda */
     margin-left: 10px;                   /* Margem à esquerda (mantida para layout) */

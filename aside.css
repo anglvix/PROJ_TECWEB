@@ -1,0 +1,164 @@
+
+aside {
+    background-color: var(--black);          /* Cor de fundo igual ao container */
+    border: 3px solid var(--malachite);      /* Borda verde clara */
+    border-radius: 15px;                     /* Raio da borda */
+    padding: 20px;                           /* Espaçamento interno */
+    width: 22%;                              /* Largura lateral */
+    height: 100%;                            /* Altura completa */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);  /* Sombra */
+    overflow-y: auto;                        /* Scroll vertical se necessário */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;                               /* Espaçamento entre elementos */
+    text-align: center;                      /* Centralizar texto */
+    margin-top: 20px;                        /* Manter margem superior */
+    margin-right: 20px;                        /* Manter margem direita */
+}
+
+/* Imagem de busto do personagem dentro do aside */
+.aside-bust {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.aside-bust img {
+    width: 440px; /* largura preferida, reduz automaticamente em ecrãs pequenos */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Estilos da scroll bar do aside */
+aside::-webkit-scrollbar {
+    width: 10px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: var(--dark-green);
+    border-radius: 10px;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: var(--dartmouth-green);
+    border-radius: 15px;
+    border: 2px solid var(--dark-green);
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background: var(--sea-green);
+}
+
+/* Seções dentro do aside */
+aside section {
+    border-bottom: 2px solid var(--dartmouth-green);
+    padding-bottom: 15px;
+}
+
+aside section:last-child {
+    border-bottom: none;
+}
+
+/* Títulos dentro do aside */
+aside h3 {
+    font-size: 1.3em;
+    color: var(--pigment-green);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Listas dentro do aside */
+aside ul {
+    padding-left: 0;
+}
+
+aside ul li {
+    margin-bottom: 8px;
+    color: var(--honeydew);
+    font-size: 1em;
+    text-align: left;
+}
+
+aside ul li:hover {
+    color: var(--malachite);
+    transition: color 0.3s ease;
+}
+
+/* Tabelas dentro do aside */
+aside .aside-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+aside .aside-table td {
+    padding: 8px 5px;
+    color: var(--honeydew);
+    font-size: 1em;
+    text-align: left;
+    border-bottom: 1px solid rgba(22, 219, 101, 0.2);
+}
+
+aside .aside-table tr:last-child td {
+    border-bottom: none;
+}
+
+aside .aside-table td:first-child {
+    font-weight: bold;
+    color: var(--pigment-green);
+    padding-right: 10px;
+}
+
+aside .aside-table td:hover {
+    color: var(--malachite);
+    transition: color 0.3s ease;
+}
+
+/* Links dentro do aside */
+aside a {
+    color: var(--pigment-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+aside a:hover {
+    color: var(--malachite);
+    text-decoration: underline;
+}
+
+/* Responsivo: reduzir aside em ecrãs pequenos */
+@media only screen and (max-width: 1200px) {
+    aside {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    aside {
+        width: 30%;
+        padding: 15px;
+    }
+
+    aside h3 {
+        font-size: 1.1em;
+    }
+
+    aside ul li {
+        font-size: 0.9em;
+    }
+}
+
+/* Linha horizontal decorativa para o aside */
+aside hr.aside-hr {
+    width: 80%;
+    height: 2px;
+    margin: 6px auto 12px;
+    border: none;
+    background: linear-gradient(90deg, transparent, var(--malachite), transparent);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+    border-radius: 2px;
+}
