@@ -208,3 +208,90 @@ hr.solid {
         width: 10%;                         /* Ainda mais estreita em ecrãs pequenos */
     }
 }
+
+/* MOBILE MODE — turn sidebar into top navbar */
+@media only screen and (max-width: 700px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100% !important;
+        height: auto;
+
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        border-radius: 0;
+        margin: 0;
+        padding: 10px 0;
+
+        bottom: auto;    /* remove fixed bottom */
+    }
+
+    .sidebar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .sidebar a img {
+        width: 30px;
+        margin: 0;
+    }
+
+    /* DROPDOWN FIX FOR MOBILE */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown .dropbtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+        font-size: 14px;
+        width: auto;
+        background: transparent;
+    }
+
+    .dropdown .dropbtn img {
+        width: 30px;
+    }
+
+    /* disable hover logic on phones */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    /* make dropdown open when the button is tapped */
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 180px;
+        border-radius: 10px;
+        padding: 5px 0;
+        text-align: center;
+        z-index: 9999;
+    }
+
+    .dropdown-content a {
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+

@@ -17,9 +17,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
     <title>Malleus Draconia</title>
+
+    
 </head>
 
 <body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdown = document.querySelector(".dropdown");
+        const btn = dropdown.querySelector(".dropbtn");
+
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            dropdown.classList.toggle("active");
+        });
+    });
+    </script>
+
     <header>
         <div class="sidebar">
             <br>
