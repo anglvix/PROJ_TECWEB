@@ -12,8 +12,8 @@ aside {
     flex-direction: column;
     gap: 15px;                               /* Espaçamento entre elementos */
     text-align: center;                      /* Centralizar texto */
-    margin-top: 20px;                        /* Manter margem superior */
-    margin-right: 20px;                        /* Manter margem direita */
+    margin-top: 12px;                        /* Manter margem superior */
+    /* remover margin-right para aproximar do content */
 }
 
 /* Imagem de busto do personagem dentro do aside */
@@ -25,12 +25,11 @@ aside {
 }
 
 .aside-bust img {
-    width: 440px; /* largura preferida, reduz automaticamente em ecrãs pequenos */
+    width: 220px; /* reduzir largura do bust para evitar overflow e gap */
     max-width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-    border-radius: 6px;
 }
 
 /* Estilos da scroll bar do aside */
@@ -153,10 +152,10 @@ aside a:hover {
 }
 
 /* Linha horizontal decorativa para o aside */
-aside hr.aside-hr {
+aside hr{
     width: 80%;
     height: 2px;
-    margin: 6px auto 12px;
+    margin: 6px auto 9px;
     border: none;
     background: linear-gradient(90deg, transparent, var(--malachite), transparent);
     box-shadow: 0 1px 0 rgba(0,0,0,0.4);

@@ -72,15 +72,16 @@ hr.solid {
 .sidebar {
     background-color: var(--night);      /* Cor de fundo da barra lateral */
     overflow: hidden;                    /* Ocultar o conteúdo que ultrapassa as dimensões da barra lateral */
-    /* Usar posicionamento fixed para que a barra lateral preencha verticalmente, mantendo margens superior/inferior */
-    position: fixed;
-    width: 16%;                          /* Largura (ajustada para restaurar espaçamento confortável) */
+    position: fixed;                    /* Usar posicionamento fixed para que a barra lateral preencha verticalmente, mantendo margens superior/inferior */
+    width: 18%;
+    max-width: 360px;                    /* Não deixar a sidebar ficar demasiado larga em ecrãs grandes */
+    min-width: 72px;                     /* Evitar ficar demasiado estreita em ecrãs muito pequenos */
     top: 20px;                           /* manter margem superior */
     bottom: 20px;                        /* manter margem inferior */
     left: 10px;                          /* pequeno afastamento da borda esquerda */
     z-index: 1000;                       /* Garantir que fica acima do conteúdo */
     border-radius: 20px;                 /* Raio da borda */
-    margin-left: 10px;                   /* Margem à esquerda (mantida para layout) */
+    margin-left: 5px;                   /* Margem à esquerda (mantida para layout) */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);   /* Sombra */
     display: flex;
     flex-direction: column;
@@ -190,16 +191,20 @@ hr.solid {
     }
     
     .sidebar {
-        width: 8%;                          /* Reduz a largura */
-    }
-
-    /* Em ecrãs intermédios evitamos que a sidebar fique demasiado larga */
-    @media only screen and (max-width: 1000px) {
-        .sidebar { width: 22%; }
+        width: 12%;                         /* Menor largura em ecrãs médios */
+        align-items: center;
     }
     
     .dropdown .dropbtn table td {
         visibility: hidden;                 /* Oculta as células da tabela */
         display: none;                      /* Não exibe */
+        align-items: center;
+    }
+}
+
+/* Breakpoint adicional: ecrãs mais pequenos */
+@media only screen and (max-width: 1000px) {
+    .sidebar {
+        width: 10%;                         /* Ainda mais estreita em ecrãs pequenos */
     }
 }
