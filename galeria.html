@@ -10,15 +10,19 @@
     <link rel="icon" href="favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 
     <link rel="stylesheet" href="styles.css">   
-    <link rel="stylesheet" href="menu.css">               
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="galeria.css">
+    <link rel="stylesheet" href="aside.css">               
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
-    <title>Referências</title>
+    <title>Galeria de Imagens</title>
+
 </head>
 
 <body>
+
     <header>
         <div class="sidebar">
             <br>
@@ -43,7 +47,7 @@
                 </table>
             </a>
 
-            <a href="galeria.html">
+            <a href="galeria.html" class="active">
                 <table>
                         <tr>
                         <th>
@@ -80,7 +84,7 @@
                     </table>
                 </button>
                 <div class="dropdown-content">
-                    <a href="referencias.html" class="active">
+                    <a href="referencias.html">
                         <table>
                                 <tr>
                                 <th>
@@ -99,22 +103,30 @@
     <main>
         <div class="container">
             <div class="content">
-                <div class="title-glow">
-                    Utilização de Referências
-                </div>
-                <ul>
-                    <li><a href="https://twisted-wonderland.fandom.com/wiki/Malleus_Draconia">Malleus Draconia - Twisted Wonderland Wiki</a></li>
-                    <li><a href="https://twisted-wonderland.fandom.com/wiki/Malleus_Draconia/Gallery">Gallery - Twisted Wonderland Wiki</a></li>
-                    <li><a href="https://twisted-wonderland.fandom.com/wiki/Twisted_Wonderland">Twisted Wonderland - Twisted Wonderland Wiki</a></li>
-                    <li><a href="https://twisted-wonderland.fandom.com/wiki/World">World - Twisted Wonderland Wiki</a></li>
-                    <li><a href="https://twisted-wonderland.fandom.com/wiki/Dormitories">Dormitories - Twisted Wonderland Wiki</a></li>
-                    <li><a href="https://cssgridgenerator.io">CSS Grid Generator</a></li>
-                </ul>
+                <section id="titles">    
+                    <div class="title-glow">
+                        Galeria de Imagens
+                    </div>
+                </section><br>
+
+                <section id="gallery">
+                    
+                    <center>
+                        
+                        <div class="g_parent">
+                            <div class="div1"><img src="imagens/dorm_uniform.png" alt="Uniforme de Dormitório"><br>Uniforme de Dormitório</div>
+                            <div class="div2"><img src="imagens/school_uniform.png" alt="Uniforme de Escola"><br>Uniforme de Escola</div>
+                            <div class="div3"><img src="imagens/sport_uniform.png" alt="Uniforme de Desporto"><br>Uniforme de Desporto</div>
+                            <div class="div4"><img src="imagens/gala_uniform.png" alt="Uniforme de Gala"><br>Uniforme de Gala</div>
+                        </div>
+                    </center>
+    
+                </section>
             </div>
         </div>
-        
+
     </main>
 
-</body>
 
+</body>
 </html>
