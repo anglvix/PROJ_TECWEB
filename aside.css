@@ -14,6 +14,10 @@ aside {
     text-align: center;                      /* Centralizar texto */
     margin-top: 12px;                        /* Manter margem superior */
     /* remover margin-right para aproximar do content */
+    /* Garantir que o aside fica no fluxo e não sobrepõe o content */
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
 }
 
 /* Imagem de busto do personagem dentro do aside */
@@ -164,24 +168,40 @@ aside hr{
 
 /* MOBILE — move aside below the content */
 @media only screen and (max-width: 700px) {
-
+    /* Force the container to stack vertically and ensure the aside comes after the content */
     .container {
         flex-direction: column;   /* stack content + aside vertically */
+        align-items: stretch;
     }
 
+    /* Ensure content stays first and takes full width */
+    .content {
+        order: 1;
+        width: 100%;
+    }
+
+    /* Place aside below content, full width and flow normally; hidden by default on mobile */
     aside {
-        position: static;         /* remove fixed sidebar */
+        order: 2;
+        position: static !important;         /* remove any fixed positioning influence */
         width: 100% !important;   /* full width */
         height: auto;
-        margin-top: 20px;
+        margin-top: 16px;
         margin-bottom: 20px;
         border-radius: 12px;
         padding: 15px;
+        display: none; /* hide aside by default on small screens */
+    }
+
+    /* When the toggle is active, show the aside */
+    aside.visible {
+        display: block;
     }
 
     .aside-bust img {
         width: 150px;             /* smaller bust image for mobile */
         margin: 0 auto;
+        display: block;
     }
 
     aside h3 {
@@ -191,6 +211,28 @@ aside hr{
     aside ul li,
     aside .aside-table td {
         font-size: 0.9em;
-        text-align: left;         /* optional: keep tables left-aligned */
+        text-align: left;         /* keep tables left-aligned */
+    }
+}
+
+/* Mobile toggle button (hidden on larger screens) */
+#aside-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    #aside-toggle {
+        display: block;
+        position: fixed;
+        right: 14px;
+        bottom: 18px;
+        z-index: 2000;
+        background: var(--pigment-green);
+        color: var(--black);
+        border: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        font-size: 16px;
     }
 }

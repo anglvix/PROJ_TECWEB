@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
     <title>Malleus Draconia</title>
 
-    
 </head>
 
 <body>
@@ -89,6 +88,9 @@
     </header>
 
     <main>
+        <!-- Mobile aside toggle button (appears only on small screens) -->
+        <button id="aside-toggle" aria-controls="mobile-aside" aria-expanded="false">Ver info</button>
+
         <div class="container">
             <div class="content">
                 <section id="titles">    
@@ -181,7 +183,7 @@
               
             </div>
 
-            <aside>
+            <aside id="mobile-aside">
                 <div class="aside-bust">
                     <img src="imagens/bust_img.png" alt="Malleus Bust">
                 </div>
@@ -233,6 +235,46 @@
         
     </main>
 
+    <script>
+    // Mobile aside toggle: show/hide the in-container aside on small screens
+        (function(){
+            const btn = document.getElementById('aside-toggle');
+            const aside = document.getElementById('mobile-aside');
+            if (!btn || !aside) return;
+
+            function updateAria() {
+                const expanded = aside.classList.contains('visible');
+                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                btn.textContent = expanded ? 'Fechar info' : 'Ver info';
+            }
+
+            btn.addEventListener('click', function(){
+                aside.classList.toggle('visible');
+                updateAria();
+                // scroll into view when opening
+                if (aside.classList.contains('visible')) {
+                    setTimeout(()=> aside.scrollIntoView({behavior:'smooth', block:'start'}), 30);
+                }
+            });
+            
+        // ensure initial state is closed on small screens
+                function handleResize(){
+                if (window.innerWidth <= 700) {
+                    aside.classList.remove('visible');
+                    btn.style.display = 'block';
+                    updateAria();
+                } else {
+                    aside.classList.remove('visible');
+                    btn.style.display = 'none';
+                }
+            }
+
+            window.addEventListener('resize', handleResize);
+            document.addEventListener('DOMContentLoaded', handleResize);
+            // run once
+            handleResize();
+        })();
+    </script>    
 </body>
 
 </html>

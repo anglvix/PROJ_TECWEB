@@ -67,6 +67,12 @@ main {
     overflow-y: auto;
     overflow-x: hidden;
     width: calc(100% - 40px);
+
+/* Garantir que o content fica acima do aside caso algo tente sobrepor */
+.content {
+     position: relative;
+     z-index: 2;
+}
     height: 95%;
     margin: 20px;
     display: flex;
@@ -194,6 +200,66 @@ main {
     opacity: 0.9;
     margin-bottom: 15px;
 }
+
+/* Grid layout feito com cssgrid.io */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 30px;
+}
+    
+.parent img{
+    width: 65%;
+    height: auto;
+}
+
+.div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+}
+
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-row-start: 3;
+}
+
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 3;
+}
+
+.div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 5;
+}
+        
+
+
 
 @media only screen and (max-width: 700px) {
     .content {
