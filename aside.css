@@ -1,24 +1,24 @@
-
+/*CSS de menu de informações no conteúdo do lado direito*/
 aside {
-    background-color: var(--black);          /* Cor de fundo igual ao container */
-    border: 3px solid var(--malachite);      /* Borda verde clara */
-    border-radius: 15px;                     /* Raio da borda */
-    padding: 20px;                           /* Espaçamento interno */
-    width: 22%;                              /* Largura lateral */
-    height: 100%;                            /* Altura completa */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);  /* Sombra */
-    overflow-y: auto;                        /* Scroll vertical se necessário */
+    background-color: var(--black);          
+    border: 3px solid var(--malachite);      
+    border-radius: 15px;                     
+    padding: 20px;                          
+    width: 22%;                              
+    height: 100%;                            
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);  
+    overflow-y: auto;                       
     display: flex;
     flex-direction: column;
-    gap: 15px;                               /* Espaçamento entre elementos */
-    text-align: center;                      /* Centralizar texto */
-    margin-top: 12px;                        /* Manter margem superior */
+    gap: 15px;                               
+    text-align: center;                     
+    margin-top: 12px;                    
     position: relative;
     z-index: 1;
     flex: 0 0 auto;
 }
 
-/* Imagem de busto do personagem dentro do aside */
+/* Imagem de busto da personagem dentro do aside */
 .aside-bust {
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@ aside::-webkit-scrollbar-thumb:hover {
     background: var(--sea-green);
 }
 
-/* Seções dentro do aside */
+/* Secções dentro do aside */
 aside section {
     border-bottom: 2px solid var(--dartmouth-green);
     padding-bottom: 15px;
@@ -142,6 +142,7 @@ aside a:hover {
     text-decoration: underline;
 }
 
+/* Formatação responsiva para o aside */
 @media only screen and (max-width: 1200px) {
     aside {
         width: 25%;
@@ -163,12 +164,11 @@ aside a:hover {
     }
 }
 
-
-/* MÓVEL — mover o aside abaixo do conteúdo e comportamentos específicos para ecrãs pequenos */
+/* Mover o aside abaixo do conteúdo e comportamentos específicos para ecrãs pequenos */
 @media only screen and (max-width: 700px) {
     /* Forçar o container a empilhar verticalmente e garantir que o aside vem após o conteúdo */
     .container {
-        flex-direction: column;   /* empilhar content + aside verticalmente */
+        flex-direction: column;     /* empilhar content + aside verticalmente */
         align-items: stretch;
     }
 
@@ -181,23 +181,23 @@ aside a:hover {
     /* Colocar o aside abaixo do conteúdo, largura total e no fluxo normal; escondido por defeito no móvel */
     aside {
         order: 2;
-        position: static !important;         /* remover qualquer influência de posicionamento fixo */
-        width: 100% !important;   /* largura total */
+        position: static !important;    /* remover qualquer influência de posicionamento fixo */
+        width: 100% !important;         /* largura total */
         height: auto;
         margin-top: 16px;
         margin-bottom: 20px;
         border-radius: 12px;
         padding: 15px;
-        display: none; /* aside escondido por defeito em ecrãs pequenos */
+        display: none;                  /* aside escondido por defeito em ecrãs pequenos */
     }
 
-    /* Quando o alternador estiver activo, mostrar o aside */
+    /* Quando o alternador estiver ativo, mostrar o aside */
     aside.visible {
         display: block;
     }
 
     .aside-bust img {
-        width: 150px;             /* imagem de busto mais pequena para móvel */
+        width: 150px;                   /* imagem de busto mais pequena para móvel */
         margin: 0 auto;
         display: block;
     }
@@ -209,7 +209,7 @@ aside a:hover {
     aside ul li,
     aside .aside-table td {
         font-size: 0.9em;
-        text-align: left;         /* manter tabelas alinhadas à esquerda */
+        text-align: left;               /* manter tabelas alinhadas à esquerda */
     }
 
     /* Botão de alternância móvel (escondido em ecrãs maiores) */

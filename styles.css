@@ -21,10 +21,12 @@ html {
     --honeydew: #ebfff3ff;
 }
 
+/* Definição da cor do fundo */
 body {
     background: var(--pakistan-green);
 }
 
+/* Barra horizontal */
 hr.solid {
     border-top: 2px solid var(--malachite);
     margin-left: 15px;
@@ -41,6 +43,7 @@ hr.solid {
     color: var(--honeydew);
 }
 
+/* Formatação do main */
 main {
     background: var(--pakistan-green);
     overflow-x: hidden;
@@ -49,17 +52,10 @@ main {
     height: 100vh;
     padding-bottom: 20px;
     padding-top: 10px;
-    /* Restaurar espaçamento confortável entre conteúdo e barra lateral à esquerda */
     margin-left: 18%;
 }
 
-/* Regressão responsiva: reduzir margem lateral em ecrãs pequenos para evitar transbordamento */
-@media only screen and (max-width: 1200px) {
-    main {
-        margin-left: 10%;
-    }
-}
-
+/* Formatação do container */
 .container {
     background-color: var(--black);
     border-radius: 15px;
@@ -67,12 +63,6 @@ main {
     overflow-y: auto;
     overflow-x: hidden;
     width: calc(100% - 40px);
-
-/* Garantir que o content fica acima do aside caso algo tente sobrepor */
-.content {
-     position: relative;
-     z-index: 2;
-}
     height: 95%;
     margin: 20px;
     display: flex;
@@ -119,6 +109,7 @@ main {
     background: var(--sea-green);
 }
 
+/* Formatação do conteudo do container */
 .content {
     margin: 20px;
     width: 100%;
@@ -146,6 +137,7 @@ main {
     margin: 20px;
     border-radius: 30px;
 }
+
 .content .myimage2 {
     width: 85%;
     margin: 20px;
@@ -257,10 +249,17 @@ main {
     grid-column-start: 3;
     grid-row-start: 5;
 }
+/* Transformar o main em ecrãs mais pequenos */
+@media only screen and (max-width: 1200px) {
+    main {
+        margin-left: 10%;
+    }
+}
 
+/* Responsividade em ecrãs ainda mais pequenos */
 @media only screen and (max-width: 700px) {
     .container {
-        flex-direction: column;   /* Empilhar conteúdo + aside verticalmente */
+        flex-direction: column;     /* Empilhar conteúdo + aside verticalmente */
     }
 
     .content {
@@ -280,6 +279,7 @@ main {
     }
 
     .parent img {
-        width: 100%; /* Aproveita melhor o espaço no mobile */
+        width: 100%;                /* Aproveita melhor o espaço no mobile */
     }
 }
+

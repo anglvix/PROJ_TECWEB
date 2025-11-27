@@ -91,7 +91,7 @@ hr.solid {
 .sidebar a {
     float: none;                            /* Remove a flutuação */
     display: block;                         /* Bloco de exibição */
-    color: var(--honeydew);                    /* Cor do texto */
+    color: var(--honeydew);                 /* Cor do texto */
     padding: 14px 16px;                     /* Espaçamento interno */
     text-decoration: none;                  /* Remover decoração de texto */
     font-size: 18px;                        /* Tamanho da fonte */
@@ -107,13 +107,13 @@ hr.solid {
 /* Estilos para links na barra lateral ao passar o rato */
 .sidebar a:hover:not(.active) {
     background-color: var(--dartmouth-green);   /* Cor de fundo ao passar o rato */
-    color: var(--honeydew);                    /* Cor do texto ao passar o rato */
+    color: var(--honeydew);                     /* Cor do texto ao passar o rato */
 }
 
 /* Estilos para o link ativo na barra lateral */
 .sidebar a.active {
     background-color: var(--dark-green);        /* Cor de fundo para o link ativo */
-    color: var(--honeydew);                    /* Cor do texto para o link ativo */
+    color: var(--honeydew);                     /* Cor do texto para o link ativo */
 }
 
 /* Estilos para o dropdown na barra lateral */
@@ -127,7 +127,7 @@ hr.solid {
     font-size: 18px;                        /* Tamanho da fonte */
     border: none;                           /* Sem borda */
     outline: none;                          /* Sem contorno */
-    color: var(--honeydew);                    /* Cor do texto */
+    color: var(--honeydew);                 /* Cor do texto */
     padding: 14px 16px;                     /* Espaçamento interno */
     background-color: inherit;              /* Herda a cor de fundo */
     font-family: inherit;                   /* Herda a fonte */
@@ -150,7 +150,7 @@ hr.solid {
     background-color: var(--sea-green);         /* Cor de fundo do dropdown */
     color: var(--honeydew);                     /* Cor do texto no dropdown */
     width: 100%;                                /* Largura mínima do dropdown */
-    box-shadow: 0px 8px 16px 0px #00000033;         /* Sombra do dropdown */
+    box-shadow: 0px 8px 16px 0px #00000033;   /* Sombra do dropdown */
     z-index: 1;                                 /* Define a ordem de empilhamento sobre outros elementos */
 }
 
@@ -170,6 +170,7 @@ hr.solid {
     display: block;                 /* Exibe o conteúdo do dropdown ao passar o rato sobre o botão do dropdown */
 }
 
+/* Transformar o menu em ecrãs mais pequenos */
 @media only screen and (max-width: 1397px) {
     .namesb img{
         width: 70px;                /* Reduz a largura da imagem */
@@ -202,14 +203,13 @@ hr.solid {
     }
 }
 
-/* Breakpoint adicional: ecrãs mais pequenos */
 @media only screen and (max-width: 1000px) {
     .sidebar {
         width: 10%;                         /* Ainda mais estreita em ecrãs pequenos */
     }
 }
 
-/* MODO MÓVEL — transformar a sidebar numa barra superior */
+/* Transformar a sidebar numa barra superior em ecrãs mais pequenos */
 @media only screen and (max-width: 700px) {
 
     .sidebar {
@@ -246,7 +246,6 @@ hr.solid {
         margin: 0;
     }
 
-    /* CORRECÇÃO DO DROPDOWN PARA MÓVEL */
     .dropdown {
         position: relative;
     }
@@ -270,7 +269,6 @@ hr.solid {
         display: none;
     }
 
-    /* fazer o dropdown abrir quando o botão é tocado */
     .dropdown.active .dropdown-content {
         display: block;
     }
