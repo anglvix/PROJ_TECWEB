@@ -39,18 +39,17 @@
     
 @media only screen and (max-width: 700px) {
     .g_parent {
-        grid-template-columns: 1fr; /* Uma coluna → tudo vertical */
-        grid-template-rows: auto;   /* Altura ajusta automaticamente */
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
         gap: 20px;
     }
 
-    /* Fazer as divs ocuparem toda a largura e ignorarem a posição anterior */
     .g_parent > div {
         grid-column: 1 !important;
         grid-row: auto !important;
     }
 
     .g_parent img {
-        width: 100%; /* Aproveita melhor o espaço no mobile */
+        width: 100%;
     }
 }
