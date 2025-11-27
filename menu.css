@@ -209,7 +209,7 @@ hr.solid {
     }
 }
 
-/* MOBILE MODE — turn sidebar into top navbar */
+/* MODO MÓVEL — transformar a sidebar numa barra superior */
 @media only screen and (max-width: 700px) {
 
     .sidebar {
@@ -246,7 +246,7 @@ hr.solid {
         margin: 0;
     }
 
-    /* DROPDOWN FIX FOR MOBILE */
+    /* CORRECÇÃO DO DROPDOWN PARA MÓVEL */
     .dropdown {
         position: relative;
     }
@@ -265,12 +265,12 @@ hr.solid {
         width: 30px;
     }
 
-    /* disable hover logic on phones */
+    /* desactivar o comportamento :hover em telemóveis */
     .dropdown:hover .dropdown-content {
         display: none;
     }
 
-    /* make dropdown open when the button is tapped */
+    /* fazer o dropdown abrir quando o botão é tocado */
     .dropdown.active .dropdown-content {
         display: block;
     }

@@ -53,7 +53,7 @@ main {
     margin-left: 18%;
 }
 
-/* Regressão responsiva: reduzir margem lateral em ecrãs pequenos para evitar overflow */
+/* Regressão responsiva: reduzir margem lateral em ecrãs pequenos para evitar transbordamento */
 @media only screen and (max-width: 1200px) {
     main {
         margin-left: 10%;
@@ -80,7 +80,7 @@ main {
     gap: 4px;
 }
 
-/* Estilo da scroll bar */
+/* Estilo da barra de rolagem */
 .container::-webkit-scrollbar {
     width: 12px;
 }
@@ -127,7 +127,7 @@ main {
     overflow-y: auto;
 }
 
-/* Estilo para UL e LI (para garantir que os pontos aparecem) */
+/* Estilo para UL e LI (para garantir que os marcadores apareçam) */
 .content ul,
 .content ol {
     list-style-position: outside;
@@ -257,18 +257,29 @@ main {
     grid-column-start: 3;
     grid-row-start: 5;
 }
-        
-
-
-
-@media only screen and (max-width: 700px) {
-    .content {
-        padding: 0 10px;
-    }
-}
 
 @media only screen and (max-width: 700px) {
     .container {
         flex-direction: column;   /* Empilhar conteúdo + aside verticalmente */
+    }
+
+    .content {
+        padding: 0 10px;
+    }
+
+    .parent {
+        grid-template-columns: 1fr; /* Uma coluna → tudo vertical */
+        grid-template-rows: auto;   /* Altura ajusta automaticamente */
+        gap: 20px;
+    }
+
+    /* Fazer as divs ocuparem toda a largura e ignorarem a posição anterior */
+    .parent > div {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+
+    .parent img {
+        width: 100%; /* Aproveita melhor o espaço no mobile */
     }
 }

@@ -88,7 +88,7 @@
     </header>
 
     <main>
-        <!-- Mobile aside toggle button (appears only on small screens) -->
+        <!-- Botão do aside móvel (aparece apenas em ecrãs pequenos) -->
         <button id="aside-toggle" aria-controls="mobile-aside" aria-expanded="false">Ver info</button>
 
         <div class="container">
@@ -236,45 +236,44 @@
     </main>
 
     <script>
-    // Mobile aside toggle: show/hide the in-container aside on small screens
-        (function(){
-            const btn = document.getElementById('aside-toggle');
-            const aside = document.getElementById('mobile-aside');
-            if (!btn || !aside) return;
+        (function() {
+            // Elementos do botão e do aside móvel
+            const botaoAside = document.getElementById('aside-toggle');
+            const asideMovel = document.getElementById('mobile-aside');
+            if (!botaoAside || !asideMovel) return;
 
-            function updateAria() {
-                const expanded = aside.classList.contains('visible');
-                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                btn.textContent = expanded ? 'Fechar info' : 'Ver info';
+            // Atualiza o texto do botão e o atributo aria-expanded
+            function atualizarBotao() {
+                const aberto = asideMovel.classList.contains('visible');
+                botaoAside.setAttribute('aria-expanded', aberto);
+                botaoAside.textContent = aberto ? 'Fechar info' : 'Ver info';
             }
 
-            btn.addEventListener('click', function(){
-                aside.classList.toggle('visible');
-                updateAria();
-                // scroll into view when opening
-                if (aside.classList.contains('visible')) {
-                    setTimeout(()=> aside.scrollIntoView({behavior:'smooth', block:'start'}), 30);
+            // Alterna a visibilidade do aside ao clicar no botão
+            botaoAside.addEventListener('click', () => {
+                asideMovel.classList.toggle('visible');
+                atualizarBotao();
+                if (asideMovel.classList.contains('visible')) {
+                    asideMovel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-            
-        // ensure initial state is closed on small screens
-                function handleResize(){
+
+            // Ajusta o estado do aside e do botão conforme o tamanho da janela
+            function ajustarAoTamanho() {
                 if (window.innerWidth <= 700) {
-                    aside.classList.remove('visible');
-                    btn.style.display = 'block';
-                    updateAria();
+                    asideMovel.classList.remove('visible');
+                    botaoAside.style.display = 'block';
                 } else {
-                    aside.classList.remove('visible');
-                    btn.style.display = 'none';
+                    asideMovel.classList.remove('visible');
+                    botaoAside.style.display = 'none';
                 }
+                atualizarBotao();
             }
 
-            window.addEventListener('resize', handleResize);
-            document.addEventListener('DOMContentLoaded', handleResize);
-            // run once
-            handleResize();
+            window.addEventListener('resize', ajustarAoTamanho);
+            document.addEventListener('DOMContentLoaded', ajustarAoTamanho);
         })();
-    </script>    
-</body>
+    </script>
 
+</body>
 </html>
